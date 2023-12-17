@@ -18,7 +18,7 @@ async function onSubmit(event) {
     try {
         const {data: {hits, total}} = await getPhoto(searchQuery, page);
         if(hits.length === 0){
-            Notiflix.Notify.info('Sorry, there are no images matching your search query. Please try again.');
+            Notiflix.Notify.failure ('Sorry, there are no images matching your search query. Please try again.');
         }
         gallery.innerHTML = createMarkup(hits);    
     } catch (error) {
