@@ -26,7 +26,7 @@ async function onSubmit(event) {
   event.preventDefault();
   loadMoreBtnEl.classList.add("is-hidden");
   page = 1;
-  query = event.target.elements.searchQuery.value;
+  query = event.target.elements.searchQuery.value.trim;
  
   try {
       const { data: { hits, total } } = await getPhoto(query, page);
