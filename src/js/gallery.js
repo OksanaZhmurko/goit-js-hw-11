@@ -20,6 +20,10 @@ async function onSubmit(event) {
   page = 1;
   query = event.target.elements.searchQuery.value.trim();
 
+  if (!query) {
+    return Notiflix.Notify.failure("Sorry, there are no images. Please enter a search query.");
+  }
+
   try {
     const { data: { hits, total, totalHits: receivedTotalHits } } = await getPhoto(query, page);
     totalHits = Math.min(500, receivedTotalHits); // Обновляем totalHits
