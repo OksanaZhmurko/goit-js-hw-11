@@ -12,7 +12,7 @@ loadMoreBtnEl.addEventListener("click", onLoadMoreBtnClick);
 
 let page = 1;
 let query = null;
-let totalHits = 500; // Указываем максимальное значение totalHits
+let totalHits = 500; 
 
 async function onSubmit(event) {
   event.preventDefault();
