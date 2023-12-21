@@ -15,12 +15,16 @@
     }
         
     .photo-card {
-        display: block;
-        max-width: 100%;
-        border: 1px solid black; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+      max-width: 100%; 
     }
- 
-.search-form {
+
+    
+    .search-form {
     justify-content: center;
     display: flex;
     align-items: center;
@@ -53,14 +57,14 @@
   .search-form button:hover {
     background-color: #0056b3;
   }
-     .gallery{
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 100px;
-        justify-content: center;
-        gap: 25px;
-     }
 
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    grid-gap: 20px;
+    margin-top: 100px;
+    justify-items: center; 
+  }
 
      .load-more {
         display: block;
@@ -84,13 +88,7 @@
         display: none;
       }
 
-      .photo-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        text-align: center; 
-        transition: box-shadow 0.3s ease;
-      }
+    
       .photo-card:hover {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         
@@ -98,7 +96,7 @@
 
       
       .photo-card img {
-        width: 900px; 
+        width: 100%; 
         height: auto; 
         margin-bottom: 10px; 
       }
@@ -109,11 +107,11 @@
 
       .info {
         display: flex;
-        justify-content: space-around;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
         width: 100%;
       }
-      
-      
         .info p {
             margin: 0;
             transition: color 0.3s ease; 
@@ -123,9 +121,8 @@
             color: #007bff; 
           }
       
-      .info-item {
-     
-        font-family:  sans-serif;
-        flex: 1;
-        padding: 25px 25px; 
-      }
+          .info-item {
+            font-family: sans-serif;
+            padding: 5px; 
+            transition: color 0.3s ease;
+          }
